@@ -48,3 +48,4 @@ SYS_TICRATE    # Server ticrate
 NUM_EDICTS     # Server num edicts
 MAXPLAYERS     # Server max players
 ```
+.
