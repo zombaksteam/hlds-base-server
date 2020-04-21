@@ -24,7 +24,6 @@ docker run -d \
  -e HL_SERVER_IP="127.0.0.1" \
  -e HL_SERVER_PORT="27015" \
  -v /etc/timezone:/etc/timezone:ro \
- -v /host-server/logs/:/home/steam/server/valve/logs/ \
  -it hl-base-server:latest
 ```
 
