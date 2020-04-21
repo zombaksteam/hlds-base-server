@@ -20,6 +20,12 @@ RUN apt-get -y update && \
 	apt-get install -y libmonoboehm-2.0-1 && \
 	apt-get install -y sqlite3 sqlite3-doc && \
 	useradd -m steam && \
+	echo "" >> /home/steam/.profile && \
+	echo "TIME_ZONE=\$(cat /etc/timezone)" >> /home/steam/.profile && \
+	echo "export TZ=\"\${TIME_ZONE}\"" >> /home/steam/.profile && \
+	echo "" >> /home/steam/.bashrc && \
+	echo "TIME_ZONE=\$(cat /etc/timezone)" >> /home/steam/.bashrc && \
+	echo "export TZ=\"\${TIME_ZONE}\"" >> /home/steam/.bashrc && \
 	su - steam -c "mkdir /home/steam/steamcmd" && \
 	su - steam -c "cd /home/steam/steamcmd;wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" && \
 	su - steam -c "cd /home/steam/steamcmd;tar -xvzf steamcmd_linux.tar.gz;rm steamcmd_linux.tar.gz" && \
