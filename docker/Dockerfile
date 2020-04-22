@@ -1,4 +1,5 @@
 FROM debian:latest
+MAINTAINER zombaksteam <zombaksteam@gmail.com>
 
 ENV HL_SERVER_IP=127.0.0.1 \
 	HL_SERVER_PORT=27015 \
