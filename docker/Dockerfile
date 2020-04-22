@@ -40,8 +40,7 @@ RUN apt-get -y update && \
 	su - steam -c "mkdir /home/steam/.steam/sdk32" && \
 	su - steam -c "ln -s /home/steam/steamcmd/linux32/steamclient.so /home/steam/.steam/sdk32/steamclient.so"
 
-COPY ./run.sh /home/steam/server/run.sh
-RUN chown steam:steam /home/steam/server/run.sh
+COPY --chown=steam:steam ./run.sh /home/steam/server/run.sh
 
 USER steam
 CMD /home/steam/server/run.sh
